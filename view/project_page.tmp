@@ -1,0 +1,24 @@
+<div class="project" id="project_<%- page.replace(/\W/g, '') %>">
+	<div class="toolbar">
+		<h1><%= title %></h1>
+		<a class="back" href="#">Back</a>
+	</div>
+	<ul class="rounded header">
+		<li>
+			<img class="cover" src="http://www.baka-tsuki.org<%= image %>">
+			<%= synopsis %>
+		</li>
+	</ul>
+	<% var cls = (_.size(volumes) - 1) ? 'hidden' : ''; %>
+	<% _.each(volumes, function(chapters, vtitle) { %>
+	 	<ul class="rounded scroll volumelist">
+	        <li class="title"><a href="#"><%= vtitle %></a></li>
+	        <% var i = 0;
+	         _.each(chapters, function(chapter, page) { 
+	         	if(i++ || !chapter.match(/illustration/i)) {
+	         	%>
+		        <li class="<%= cls %>"><a href="controller.php?action=chapter&page=<%- page %>"><%= chapter %></a></li>
+	        <% }}); %>
+    	</ul>
+    <% }); %>
+</div>

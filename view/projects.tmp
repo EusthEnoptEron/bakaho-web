@@ -1,0 +1,10 @@
+<div id="projects">
+	<div class="toolbar">
+		<h1>Baka-Tsuki</h1>
+	</div>
+	<ul class="rounded">
+		<% _.each(projects, function(project) { %>
+			<li class="arrow"><a href="controller.php?action=project&page=<%- project.page %>"><%- project.name %></a></li>
+		<% }); %>
+	</ul>
+</div>

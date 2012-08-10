@@ -1,0 +1,13 @@
+<div id="<%= id %>">
+	<div class="reader">
+		<%= body %>
+	</div>
+	<div class="toolbar">
+		<% if(prev) { %>
+			<a class="prev button" href="controller.php?action=chapter&page=<%- prev %>">Previous</a>
+		<% } %>
+		<% if(next) { %>
+			<a class="next button" href="controller.php?action=chapter&page=<%- next %>">Next</a>
+		<% } %>
+	</div>
+</div>
